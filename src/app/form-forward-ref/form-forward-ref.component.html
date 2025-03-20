@@ -1,0 +1,9 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <label>Toggle</label>
+    <app-toggle formControlName="toggleSwitch"> </app-toggle>
+    <br><br>
+    <div *ngIf="myForm.controls.toggleSwitch.invalid && myForm.controls.toggleSwitch.touched">
+        <small>Toggle must be turned ON to submit.</small>
+    </div>
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>

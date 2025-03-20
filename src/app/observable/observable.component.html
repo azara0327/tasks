@@ -1,0 +1,8 @@
+<p>observable works!</p>
+<input type="text" #search>
+<div>
+    <div *ngFor="let u of users" style="display: flex; margin: 10px;">
+        <img [src]="u.avatar_url" style="height: 40px; width: 40px; border-radius: 10px;"/>
+        <h4>{{u.login}}</h4>
+    </div>
+</div>

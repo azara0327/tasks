@@ -1,0 +1,16 @@
+<p>forms works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+    <input type="text" placeholder="Enter your name" formControlName="user">
+    <div *ngIf="loginForm.controls.user.invalid && loginForm.controls.user.touched">
+        <small *ngIf="loginForm.controls.user.errors?.required">Username is required</small>
+        <small *ngIf="loginForm.controls.user.errors?.minlength">Username must contain atleast 3 characters</small>
+    </div>
+    <br><br>
+    <input type="text" placeholder="Enter your password" formControlName="password">
+    <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+        <small *ngIf="loginForm.controls.password.errors?.required">Password is required</small>
+        <small *ngIf="loginForm.controls.password.errors?.pattern">Password must contain atleast 8 characters, one upper case, one lower, one digit and one special character.</small>
+    </div>
+    <br><br>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>

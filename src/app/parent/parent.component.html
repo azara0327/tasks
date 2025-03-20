@@ -1,0 +1,5 @@
+<h3>Parent Component</h3>
+<app-child [messageFromParent]="parentMessage" (passDataToParent)="receiveMessage($event)"></app-child>
+<div>
+    {{receivedMessage}}
+</div>
